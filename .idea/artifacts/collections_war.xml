@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="collections:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="hello-springboot-1.4.0.RELEASE.war">
+      <element id="artifact" artifact-name="collections:war exploded" />
+    </root>
+  </artifact>
+</component>
