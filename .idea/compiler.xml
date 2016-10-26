@@ -22,11 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="AnnonceScraper" />
         <module name="collections" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="collections" target="1.7" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="AnnonceScraper" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,24 +1,46 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ include file="header.jsp" %>
 
-<link type="text/css" rel="stylesheet" href="<c:url value="/globalCSS.css" />" />
-<html>
-<head>
-    <title>Contact Scraper</title>
+<h1>Saved contacts</h1>
+<div>
+    <form:form method="POST" action="/deleteAllSaved">
+        <input type="submit" name="Delete all" value="Delete all records">
+    </form:form>
 
-</head>
-<body>
-<h1>Contact scraper</h1>
-<ul class="navigation">
-    <li class="navigation"><a href="/index">Home</a></li>
-    <li class="navigation"><a class="active" href="/annonce">Scrape it!</a></li>
-    <li class="navigation"><a href="/about">About</a></li>
-</ul>
+    <form:form method="POST" action="/deleteSaved" modelAttribute="contactList">
+        <input type="submit" name="Delete marked records" value="Delete marked records">
+        <div>
+            <table>
+                <tr>
+                    <th>date</th>
+                    <th>email</th>
+                    <th class="textdescr">text</th>
+                    <th>mobil</th>
+                    <th>profession</th>
+                    <th>domain</th>
+                    <th>region</th>
+                    <th>action</th>
+                </tr>
+                <c:forEach items="${contactList.list}" var="dbContact" varStatus="status">
+                    <tr>
+                        <td>${dbContact.date}a</td>
+                        <td>${dbContact.email}s</td>
+                        <td class="textdescr">${dbContact.text}d</td>
+                        <td>${dbContact.mobil}</td>
+                        <td>${dbContact.profession}</td>
+                        <td>${dbContact.domain}</td>
+                        <td>${dbContact.region}</td>
+                        <td>
+                                <%--<form:checkbox path="contactList.list" />--%>
+                            <form:checkbox path="contactList.list[${status.index}].toBeDeleted"/>
+                                <%----%><input type="checkbox" id="items${dbContact.index}" name="maths"
+                                               checked="checked" value="${dbContact.toBeDeleted}"/>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+    </form:form>
+</div>
 
-New url saved: ${annonceSettings.url} <br>
-New number of desired records saved: ${annonceSettings.nrToScrape} <br>
-New start at tab saved: ${annonceSettings.startAtTab} <br>
-<a href ="/annonce">Go back</a>
 
-</body>
-</html>
+<%@ include file="footer.jsp" %>

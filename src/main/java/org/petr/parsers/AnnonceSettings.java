@@ -1,10 +1,8 @@
 package org.petr.parsers;
 
 
-import org.hibernate.validator.constraints.*;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.petr.proxy.ProxyServerList;
-
-import javax.validation.constraints.Size;
 
 
 /**
@@ -17,6 +15,12 @@ public class AnnonceSettings {
     Integer nrToScrape;
     Integer startAtTab;
     ProxyServerList proxyServerList;
+
+    public AnnonceSettings() {
+        setUrl("http://www.annonce.cz/hledam-praci-chci-vydelat$18.html?department=&zps=&location_country=&q=&jobsSourceRejected=1&maxAge=&nabidkovy=0&action=Hledej&page=1");
+        setNrToScrape(10);
+        setStartAtTab(1);
+    }
 
     public ProxyServerList getProxyServerList() {
         return proxyServerList;

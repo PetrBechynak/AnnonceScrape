@@ -1,20 +1,11 @@
 package org.petr.proxy;
 
-import org.apache.jasper.tagplugins.jstl.core.Url;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
-import org.petr.parsers.Contact;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.InetSocketAddress;
-import java.net.Proxy;
 import java.util.ArrayList;
 import java.util.List;
-import java.net.URL;
 
 /**
  * Created by petr on 20.9.16.
@@ -22,8 +13,10 @@ import java.net.URL;
 public class ProxyServerList {
     List<Server> list = new ArrayList();
 
-    public List<Server> getList() {
-        return list;
+    public ProxyServerList() throws IOException {
+        System.out.println("Loading list of proxy servers...");
+        fill();
+        System.out.println("Loading list of proxy servers sucessfully ended.");
     }
 
     public static void main(String[] args) throws IOException {
@@ -34,10 +27,8 @@ public class ProxyServerList {
         ps.toString();
     }
 
-    public ProxyServerList() throws IOException {
-        System.out.println("Loading list of proxy servers...");
-        fill();
-        System.out.println("Loading list of proxy servers sucessfully ended.");
+    public List<Server> getList() {
+        return list;
     }
 
     public void fill() throws IOException {
@@ -54,10 +45,10 @@ public class ProxyServerList {
                 String type;
                 String anonymity;
 
-                ip = doc.select("#content-section > section.proxy > div > table > tbody > tr:nth-child("+i+") > td.tdl").text();
-                port = doc.select("#content-section > section.proxy > div > table > tbody > tr:nth-child("+i+") > td:nth-child(2)").text();
-                type = doc.select("#content-section > section.proxy > div > table > tbody > tr:nth-child("+i+") > td:nth-child(5)").text();
-                anonymity = doc.select("#content-section > section.proxy > div > table > tbody > tr:nth-child("+i+") > td:nth-child(6)").text();
+                ip = doc.select("#content-section > section.proxy > div > table > tbody > tr:nth-child(" + i + ") > td.tdl").text();
+                port = doc.select("#content-section > section.proxy > div > table > tbody > tr:nth-child(" + i + ") > td:nth-child(2)").text();
+                type = doc.select("#content-section > section.proxy > div > table > tbody > tr:nth-child(" + i + ") > td:nth-child(5)").text();
+                anonymity = doc.select("#content-section > section.proxy > div > table > tbody > tr:nth-child(" + i + ") > td:nth-child(6)").text();
 
 
                 server.setIp(ip);

@@ -1,7 +1,5 @@
 package org.petr.proxy;
 
-import java.util.List;
-
 /**
  * Created by petr on 20.9.16.
  */

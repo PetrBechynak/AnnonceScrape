@@ -1,11 +1,18 @@
 package org.petr.parsers;
 
-import java.io.IOException;
+import org.petr.data.Contact;
+
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by petr on 13.9.16.
  */
-public interface IParser {
-    List<Contact> parse(AnnonceSettings a) throws Exception;
+public interface IParser extends Serializable {
+    List<Contact> getList();
+
+    List<Contact> fillAndGetList(AnnonceSettings a) throws Exception;
+
+    void fillList(AnnonceSettings a) throws Exception;
+
 }

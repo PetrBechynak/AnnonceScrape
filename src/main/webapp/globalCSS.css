@@ -5,8 +5,7 @@ body {
     background-color: #eaecf5;
 }
 
-table
-{
+table {
     margin: 4px;
     list-style: none;
     background-color: #c4d3e2;
@@ -17,12 +16,14 @@ h1 {
     text-align: left;
     margin-top: 20px;
 }
+
 h4 {
     color: #313334;
     text-align: left;
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
 h5 {
     color: #313334;
     text-align: left;
@@ -80,7 +81,7 @@ div.annonce {
 }
 
 input.annonceurl {
-    width: 700px;
+    width: 600px;
 }
 
 .error {
