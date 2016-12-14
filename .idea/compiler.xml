@@ -24,10 +24,12 @@
         <processorPath useClasspath="true" />
         <module name="AnnonceScraper" />
         <module name="collections" />
+        <module name="Omenu" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="AnnonceScraper" target="1.8" />
+      <module name="Omenu" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -9,7 +9,6 @@ public class Application extends org.springframework.boot.web.support.SpringBoot
     public static void main(String[] args) throws Exception {
         SpringApplication.run(Application.class, args);
 
-
     }
 
     @Override

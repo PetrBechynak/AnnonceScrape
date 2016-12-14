@@ -4,7 +4,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="AnnonceScraper" />
+          <element id="module-output" name="Omenu" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: javax.mail:mail:1.4" />
@@ -51,7 +51,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/hello-springboot-1.4.0.RELEASE/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="AnnonceScraper/web/Web" />
+      <element id="javaee-facet-resources" facet="Omenu/web/Web" />
     </root>
   </artifact>
 </component>
